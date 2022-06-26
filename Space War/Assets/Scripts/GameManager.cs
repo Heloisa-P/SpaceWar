@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Properties")]
     public Player player;
     public float protectionTime;
-    public int playerHP = 3;
+    public int playerHP;
 
     [Header("Obstacles Properties")]
     public GameObject[] listObstacles;
@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        player.GetPrefs();
+        playerHP = player.hp;
+        UpdateLifeUI();
+
         StartCoroutine(SpawnNewObstacle());
         lifePointsUI.text = "x " + playerHP.ToString();
         StartCoroutine(SpawnBoss());
@@ -86,17 +90,8 @@ public class GameManager : MonoBehaviour
     {
         if(!isGamePaused && !isBossOn)
         {
-            GameObject obstacle;
-
             Transform spawnPoint = spawnObstacles[Random.Range(0, spawnObstacles.Length)];
-            if(score <= 70)
-            {
-                obstacle = Instantiate(listObstacles[Random.Range(0, 2)]);
-            }
-            else
-            {
-                obstacle = Instantiate(listObstacles[Random.Range(0, spawnObstacles.Length)]);
-            }
+            GameObject obstacle = Instantiate(listObstacles[Random.Range(0, listObstacles.Length)]);
 
             obstacle.transform.position = spawnPoint.position;
 
@@ -127,6 +122,8 @@ public class GameManager : MonoBehaviour
         isBossOn = true;
         GameObject boss = Instantiate(bossList[Random.Range(0, bossList.Length)]);
         boss.transform.position = spawnObstacles[1].position;
+
+        DestroyAllObstacles();
     }
 
     #endregion
@@ -176,11 +173,11 @@ public class GameManager : MonoBehaviour
         switch (difficulty)
         {
             case 0:
-                AlterSpeed(1f, 1f, 1f);
+                AlterSpeed(1f, 0.6f, 0.8f);
                 break;
 
             case 1:
-                AlterSpeed(1.05f, 1f, 0.9f);
+                AlterSpeed(1.05f, 0.8f, 0.9f);
                 break;
 
             case 2:
@@ -227,7 +224,7 @@ public class GameManager : MonoBehaviour
 
     public void HealPlayer(int plusLife)
     {
-        if (playerHP < 3)
+        if (playerHP < player.hp)
         {
             playerHP += plusLife;
             UpdateLifeUI();
@@ -272,7 +269,7 @@ public class GameManager : MonoBehaviour
 
     public void FullLifeUpgrade()
     {
-        playerHP = 3;
+        playerHP = player.hp;
         uiManager.HideUpgradePanel();
         UpdateLifeUI();
     }

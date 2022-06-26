@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
+    [HideInInspector]
     public float speed;
     private float DestroyPosition = 10f;
 

@@ -45,25 +45,30 @@ public class BossScript : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x > 2)
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if(!GameManager.instance.isGamePaused)
+        {
+            if (transform.position.x > 2)
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-        if (transform.position.y > 0.8f)
-           movementDirection = Vector2.down;
+            if (transform.position.y > 0.8f)
+                movementDirection = Vector2.down;
 
-       else if(transform.position.y < -0.8f)
-           movementDirection = Vector2.up;
+            else if (transform.position.y < -0.8f)
+                movementDirection = Vector2.up;
 
-       transform.Translate(movementDirection * speed * Time.deltaTime);
-
+            transform.Translate(movementDirection * speed * Time.deltaTime);
+        }
     }
 
     private IEnumerator Shot()
     {
-        for (int i = 0; i < shotSpawns.Length; i++)
+        if(!GameManager.instance.isGamePaused)
         {
-            GameObject shot = Instantiate(shotPrefab);
-            shot.transform.position = shotSpawns[i].transform.position;
+            for (int i = 0; i < shotSpawns.Length; i++)
+            {
+                GameObject shot = Instantiate(shotPrefab);
+                shot.transform.position = shotSpawns[i].transform.position;
+            }
         }
 
         yield return new WaitForSeconds(coolDown);

@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - PowerUp
     - PowerUpManager
     - Shot
+    - SkinChoice
     - StartManager
     - SwipeDetection
     - UIManager
@@ -57,6 +58,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
@@ -88,13 +90,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2778}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 2996}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3924}
+      Script: {instanceID: 3926}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -161,29 +163,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 2996}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3504}
+      Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 3718}
+      Script: {instanceID: 3720}
     - Class: 114
-      Script: {instanceID: 4338}
+      Script: {instanceID: 4340}
     - Class: 114
-      Script: {instanceID: 4446}
+      Script: {instanceID: 4448}
     - Class: 114
-      Script: {instanceID: 4482}
+      Script: {instanceID: 4484}
     - Class: 114
-      Script: {instanceID: 4884}
+      Script: {instanceID: 4886}
     - Class: 114
-      Script: {instanceID: 5218}
+      Script: {instanceID: 5220}
     - Class: 114
-      Script: {instanceID: 5342}
+      Script: {instanceID: 5344}
     - Class: 114
-      Script: {instanceID: 5596}
+      Script: {instanceID: 5598}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -248,13 +250,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 2996}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 4390}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 4806}
+      Script: {instanceID: 4392}
+    - Class: 114
+      Script: {instanceID: 4808}
+    - Class: 114
+      Script: {instanceID: 5530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -370,7 +376,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 98006c5fa1a7dd5709958c745ac91490
+      Hash: bfbf89a27f0327ae9231c172b5fd0f5f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -476,6 +482,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8c57452d097bccbfdf0682d6374dda9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SkinChoice
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -796,7 +808,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: b69d6ab84fd75f409623121ea43e5ded
+      Hash: e44cb52899b8d62c48022753b9ebc175
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartManager

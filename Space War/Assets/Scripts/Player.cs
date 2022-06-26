@@ -10,31 +10,47 @@ public class Player : MonoBehaviour
     private int positionNow = 1;
     private string damageKey = "damageKey";
 
+    private string skinPrefsKey = "Skin Prefs";
+    [HideInInspector]
+    public int hp = 3;
+    [HideInInspector]
+    public float coolDown = 1;
+    [HideInInspector]
+    public float shotSpeed = 1;
+
     [Header("References")]
     public GameObject explosionEffect;
 
     [Header("Shot Properties")]
-    public float shotSpeed;
     public GameObject normalShotPrefab;
     public GameObject buffShotPrefab;
-    public float coolDown = 1f;
 
     private float lastShot;
     private GameObject shotPrefab;
 
     [Header("Audio Control")]
-    public AudioClip[] audios; // 0 - shot ; 1 - damage ; 2 - death
+    public AudioClip[] audios;
     private AudioSource audioSource;
+
+    [Header("Skin Prefs")]
+    public RuntimeAnimatorController[] controllers;
+    public GameObject[] defaultShots;
+    public GameObject[] buffedShots;
+    private int selectedIndex = 0;
 
     [HideInInspector]
     public bool isInvencible = false;
+
+    #region "Start"
 
     private void Start()
     {
         shotPrefab = normalShotPrefab;
         PlayerPrefs.SetInt(damageKey, 1);
-        anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        shotPrefab = defaultShots[selectedIndex];
+        buffShotPrefab = buffedShots[selectedIndex];
     }
 
     private void Update()
@@ -44,6 +60,24 @@ public class Player : MonoBehaviour
         else
             anim.speed = 1;
     }
+
+    public void GetPrefs()
+    {
+        if (PlayerPrefs.HasKey(skinPrefsKey))
+        {
+            string[] data = PlayerPrefs.GetString(skinPrefsKey).Split('|');
+
+            selectedIndex = int.Parse(data[0]);
+            hp = int.Parse(data[1]);
+            coolDown = float.Parse(data[2]) / 10;
+            shotSpeed = float.Parse(data[3]) / 10;
+        }
+
+        anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = controllers[selectedIndex];
+    }
+
+    #endregion
 
     #region "Movement"
 

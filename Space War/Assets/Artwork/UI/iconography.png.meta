@@ -32,6 +32,15 @@ TextureImporter:
   - first:
       213: 7695794658083153993
     second: sfxIcon
+  - first:
+      213: 6845508033182578871
+    second: nextButton
+  - first:
+      213: 6010568972159643645
+    second: iconography_11
+  - first:
+      213: -3707757101214403941
+    second: iconography_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -321,7 +330,7 @@ TextureImporter:
         width: 380
         height: 380
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -342,7 +351,7 @@ TextureImporter:
         width: 380
         height: 380
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,6 +359,69 @@ TextureImporter:
       bones: []
       spriteID: 948256ba774fcca60800000000000000
       internalID: 7695794658083153993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nextButton
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 2156
+        width: 380
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b83ee08941200f50800000000000000
+      internalID: 6845508033182578871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconography_11
+      rect:
+        serializedVersion: 2
+        x: 2801
+        y: 62
+        width: 380
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff6f8382a4d96350800000000000000
+      internalID: 6010568972159643645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconography_12
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 1418
+        width: 380
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92feac9f866b8cc0800000000000000
+      internalID: -3707757101214403941
       vertices: []
       indices: 
       edges: []

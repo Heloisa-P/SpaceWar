@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.isGamePaused = true;
         upgradePanel.SetActive(true);
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.2f);
 
         foreach (Button button in buttonList)
             button.interactable = true;

@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +22,9 @@ public class StartManager : MonoBehaviour
 
     private string modeKey = "isSwipeMode";
     private bool isSwipeMode = true;
+
+    [Header("Skin Screen")]
+    public GameObject skinPanel;
 
     private void Start()
     {
@@ -60,6 +63,20 @@ public class StartManager : MonoBehaviour
     {
         isConfigOpen = false;
         configPanel.SetActive(isConfigOpen);
+    }
+
+    #endregion
+
+    #region "Skin"
+
+    public void OpenSkinScreen()
+    {
+        skinPanel.SetActive(true);
+    }
+
+    public void CloseSkinScreen()
+    {
+        skinPanel.SetActive(false);
     }
 
     #endregion
